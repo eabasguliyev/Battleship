@@ -11,7 +11,8 @@ int main()
 
 	while (true)
 	{
-		if (GameModeScreen() == SINGLEPLAYER)
+		short status = GameModeScreen();
+		if (status == 1)
 		{
 			system("CLS");
 
@@ -21,11 +22,12 @@ int main()
 
 			Game(difficulty);
 		}
-		else
+		else if (status == 2)
 		{
 			system("CLS");
 			Game();
 		}
+		else
+			exit(0);
 	}
-	std::cin.get();
 }

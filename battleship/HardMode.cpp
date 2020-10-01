@@ -312,11 +312,15 @@ void HardMode(Player* human, Player* computer, bool &AI_WIN)
 
 							if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] != -1)
 							{
-								if (!AttackToOpponent(human, computer))
+								if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] > 1)
 								{
-									break;
+									if (!AttackToOpponent(human, computer))
+									{
+										break;
+									}
+									hits++;
 								}
-								hits++;
+								
 							}
 						}
 						else
@@ -336,11 +340,14 @@ void HardMode(Player* human, Player* computer, bool &AI_WIN)
 
 							if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] != -1)
 							{
-								if (!AttackToOpponent(human, computer))
+								if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] > 1)
 								{
-									break;
+									if (!AttackToOpponent(human, computer))
+									{
+										break;
+									}
+									hits++;
 								}
-								hits++;
 							}
 						}
 						else
@@ -363,11 +370,14 @@ void HardMode(Player* human, Player* computer, bool &AI_WIN)
 
 							if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] != -1)
 							{
-								if (!AttackToOpponent(human, computer))
+								if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] > 1)
 								{
-									break;
+									if (!AttackToOpponent(human, computer))
+									{
+										break;
+									}
+									hits++;
 								}
-								hits++;
 							}
 						}
 						else
@@ -387,11 +397,14 @@ void HardMode(Player* human, Player* computer, bool &AI_WIN)
 
 							if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] != -1)
 							{
-								if (!AttackToOpponent(human, computer))
+								if (human->_board.board[computer->_coordinate.x][computer->_coordinate.y] > 1)
 								{
-									break;
+									if (!AttackToOpponent(human, computer))
+									{
+										break;
+									}
+									hits++;
 								}
-								hits++;
 							}
 						}
 						else
