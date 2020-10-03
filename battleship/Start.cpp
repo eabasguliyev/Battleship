@@ -9,13 +9,13 @@ int Start(Player * player1, Player * player2, int difficulty)
 {
 	int turn = Draw();
 	
-	bool AI_WIN = false;
 	while (true)
 	{
 		if (turn)
 		{
 			if (player2->is_computer)
 			{
+				bool AI_WIN = false;
 
 				switch (difficulty)
 				{
@@ -41,6 +41,7 @@ int Start(Player * player1, Player * player2, int difficulty)
 				if (AI_WIN)
 				{
 					AI_WIN = false;
+					PrintBoards(player2, player1);
 					PrintWinner(player2);
 					PrintScores(player1, player2);
 					break;

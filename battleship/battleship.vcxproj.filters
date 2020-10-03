@@ -110,5 +110,8 @@
     <ClInclude Include="Declarations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="HardModePart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
