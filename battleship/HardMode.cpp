@@ -193,13 +193,6 @@ void HardMode(Player* human, Player* computer, bool &AI_WIN)
 					{
 						if (status == 2)
 						{
-							STATE = 0;
-							last_move.x = 0;
-							last_move.y = 0;
-							tries = 0;
-							hits = 0;
-							orientation = false;
-							direction = false;
 							ResetData(STATE, last_move, tries, hits, orientation, direction);
 							return;
 						}
