@@ -3,45 +3,23 @@
 #include "Declarations.h"
 #include <Windows.h>
 #include <time.h>
+#include "Settings.h"
 
-
-int Start(Player * player1, Player * player2, int difficulty)
+void Start(Player * player1, Player * player2, Settings gs)
 {
 	int turn = Draw();
-	
+	//int turn = true;
 	while (true)
 	{
 		if (turn)
 		{
-			if (player2->is_computer)
+			if (gs.gameMode)
 			{
-				bool AI_WIN = false;
-
-				switch (difficulty)
+				PrintBoards(player2, player1, gs.gameMode);
+				Sleep(1000); 
+				short status = AI(player1, player2, gs.diff, gs.sound);
+				if (status)
 				{
-				case Easy:
-				{
-					EasyMode(player1, player2, AI_WIN);
-				}
-				break;
-				case Normal:
-				{
-					HardMode(player1, player2, AI_WIN);
-				}
-					break;
-				case Legend:
-				{
-					continue;
-				}
-				break;
-				default:
-					break;
-				}
-
-				if (AI_WIN)
-				{
-					AI_WIN = false;
-					PrintBoards(player2, player1);
 					PrintWinner(player2);
 					PrintScores(player1, player2);
 					break;
@@ -53,12 +31,19 @@ int Start(Player * player1, Player * player2, int difficulty)
 				GetValidCoordinates(player1->_board, player2->_coordinate);
 				if (AttackToOpponent(player1, player2))
 				{
+					if (gs.sound)
+					{
+						SoundEffects(1);
+						Sleep(500);
+					}
+
 					if (player1->_board.CheckBlocks())
 					{
 						PrintWinner(player2);
 						PrintScores(player1, player2);
 						break;
 					}
+
 					continue;
 				}
 			}
@@ -66,11 +51,16 @@ int Start(Player * player1, Player * player2, int difficulty)
 		else
 		{
 			PrintBoards(player2, player1);
-
+			
 			GetValidCoordinates(player2->_board, player1->_coordinate);
 
 			if (AttackToOpponent(player2, player1))
 			{
+				if (gs.sound)
+				{
+					SoundEffects(1);
+					Sleep(500);
+				}
 				if (player2->_board.CheckBlocks())
 				{
 					PrintWinner(player1);
@@ -81,11 +71,15 @@ int Start(Player * player1, Player * player2, int difficulty)
 			}
 		}
 		turn = (turn) ? false : true;
+		PrintBoards(player2, player1);
+		if (gs.sound)
+		{
+			SoundEffects(0);
+			Sleep(500);
+		}
 	}
 
 	std::cin.ignore(255, '\n');
 	std::cout << "Press enter to continue";
 	std::cin.get();
-
-	return 0;
 }

@@ -1,6 +1,6 @@
 #pragma once
 #include "Declarations.h"
-
+#include <time.h>
 
 struct Board
 {
@@ -9,74 +9,87 @@ struct Board
 
 	int board_size = 10;
 
-
-	void PrintBoard()
+	void PrintBoard(COORD coordinate)
 	{
+		HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
+
+		SetConsoleCursorPosition(hConsoleOUT, coordinate);
+
 		std::cout << "   0  1  2  3  4  5  6  7  8  9\n";
+
 		for (size_t i = 0; i < board_size; i++)
 		{
+			coordinate.Y++;
+			SetConsoleCursorPosition(hConsoleOUT, coordinate);
 			std::cout << i << ' ';
+			SetConsoleTextAttribute(hConsoleOUT, GREEN);
 			for (size_t j = 0; j < board_size; j++)
 			{
-				if (board[i][j] == 0)
+				switch (board[i][j])
 				{
-					std::cout << " . ";
-				}
-				else if (board[i][j] == -1)
-				{
+				case MISSED:
 					std::cout << " * ";
-				}
-				else if (board[i][j] == 1)
-				{
+					break;
+				case SPACE:
+					std::cout << " . ";
+					break;
+				case HIT:
 					std::cout << " X ";
-				}
-				else if (board[i][j] == CARRIER)
-				{
-					std::cout << " A ";
-				}
-				else if (board[i][j] == BATTLESHIP)
-				{
-					std::cout << " B ";
-				}
-				else if (board[i][j] == CRUISER)
-				{
-					std::cout << " C ";
-				}
-				else if (board[i][j] == SUBMARINE)
-				{
-					std::cout << " S ";
-				}
-				else if (board[i][j] == DESTROYER)
-				{
+					break;
+				case DESTROYER:
 					std::cout << " D ";
+					break;
+				case SUBMARINE:
+					std::cout << " S ";
+					break;
+				case CRUISER:
+					std::cout << " C ";
+					break;
+				case BATTLESHIP:
+					std::cout << " B ";
+					break;
+				case CARRIER:
+					std::cout << " A ";
+					break;
+				default:
+					break;
 				}
 			}
 			std::cout << std::endl;
+			SetConsoleTextAttribute(hConsoleOUT, WHITE);
 		}
 	}
 	
-	void PrintOpponentBoard()
+	void PrintOpponentBoard(COORD coordinate)
 	{
+		HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
+
+		SetConsoleCursorPosition(hConsoleOUT, coordinate);
+
 		std::cout << "   0  1  2  3  4  5  6  7  8  9\n";
 		for (size_t i = 0; i < board_size; i++)
 		{
+			coordinate.Y++;
+			SetConsoleCursorPosition(hConsoleOUT, coordinate);
 			std::cout << i << ' ';
+			SetConsoleTextAttribute(hConsoleOUT, RED);
 			for (size_t j = 0; j < board_size; j++)
 			{
-				if (board[i][j] == -1)
+				switch (board[i][j])
 				{
+				case MISSED:
 					std::cout << " * ";
-				}
-				else if (board[i][j] == 1)
-				{
+					break;
+				case HIT:
 					std::cout << " X ";
-				}
-				else
-				{
+					break;
+				default:
 					std::cout << " . ";
+					break;
 				}
 			}
 			std::cout << std::endl;
+			SetConsoleTextAttribute(hConsoleOUT, WHITE);
 		}
 	}
 	
@@ -108,41 +121,34 @@ struct Board
 		return false;
 	}
 
-	void BoardConf()
+	void BoardConf(bool is_computer)
 	{
-		system("CLS");
-		PrintBoard();
-		std::cout << "Add Carrier\n";
-		PlaceTheShip(board, 5, CARRIER);
-		system("CLS");
-		PrintBoard();
-
-		std::cout << "Add Battleship\n";
-		PlaceTheShip(board, 4, BATTLESHIP);
-		system("CLS");
-		PrintBoard();
-
-		std::cout << "Add Cruiser\n";
-		PlaceTheShip(board, 3, CRUISER);
-		system("CLS");
-		PrintBoard();
-
-		std::cout << "Add Submarine\n";
-		PlaceTheShip(board, 3, SUBMARINE);
-		system("CLS");
-		PrintBoard();
-
-		std::cout << "Add Destroyer\n";
-		PlaceTheShip(board, 2, DESTROYER);
-	}
-
-	void BoardConfAI()
-	{
-		PlaceAIShips(board, 5, CARRIER);
-		PlaceAIShips(board, 4, BATTLESHIP);
-		PlaceAIShips(board, 3, CRUISER);
-		PlaceAIShips(board, 3, SUBMARINE);
-		PlaceAIShips(board, 2, DESTROYER);
+		if (is_computer)
+		{
+			PlaceAIShips(board, 5, CARRIER);
+			PlaceAIShips(board, 4, BATTLESHIP);
+			PlaceAIShips(board, 3, CRUISER);
+			PlaceAIShips(board, 3, SUBMARINE);
+			PlaceAIShips(board, 2, DESTROYER);
+		}
+		else
+		{
+			system("CLS");
+			PrintBoard({ 42, 8 });
+			PlaceTheShip(board, 5, CARRIER);
+			system("CLS");
+			PrintBoard({ 42, 8 });
+			PlaceTheShip(board, 4, BATTLESHIP);
+			system("CLS");
+			PrintBoard({ 42, 8 });
+			PlaceTheShip(board, 3, CRUISER);
+			system("CLS");
+			PrintBoard({ 42, 8 });
+			PlaceTheShip(board, 3, SUBMARINE);
+			system("CLS");
+			PrintBoard({ 42, 8 });
+			PlaceTheShip(board, 2, DESTROYER);
+		}
 	}
 	
 	void ResetBlocks()

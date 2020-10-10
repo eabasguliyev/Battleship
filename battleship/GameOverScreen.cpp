@@ -5,19 +5,18 @@
 
 
 
-bool GameOverScreen()
+bool GameOverScreen(bool inputDevices)
 {
-
-	short selected = 1;
 
 	system("CLS");
 
 	int size = 2;
 	char** options = new char* [size];
-	options[0] = _strdup("1. Rematch");
-	options[1] = _strdup("2. Main Menu");
+	options[0] = _strdup("Rematch");
+	options[1] = _strdup("Main Menu");
 
-	ControlMenu(options, size, selected);
-
-	return (selected == 1) ? true : false;
+	if (inputDevices)
+		return (MenuInputWithMouse(options, size) == 1) ? true : false;
+	else
+		return (MenuInputWithKeyboard(options, size) == 1) ? true:false;
 }

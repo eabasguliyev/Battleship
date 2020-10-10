@@ -1,19 +1,22 @@
 #include <iostream>
 #include "Player.h"
 #include "Declarations.h"
+#include "Settings.h"
 
-
-void Game(short difficulty)
+void Game(Settings gs)
 {
+	/*Player * player1 = AISettings(difficulty);
+
+	player1->name = _strdup("Elgun");*/
 	Player* player1 = CreatePlayer();
 
 	player1->_board.NewBoard();
 
-	player1->_board.BoardConf();
+	player1->_board.BoardConf(false);
 
 
 	Player* player2;
-	if (difficulty)
+	if (gs.gameMode)
 	{
 		player2 = AISettings();
 	}
@@ -24,20 +27,21 @@ void Game(short difficulty)
 
 		player2->_board.NewBoard();
 
-		player2->_board.BoardConf();
+		player2->_board.BoardConf(false);
 	}
 
 
-	while(true)
+	while(1)
 	{
 		std::cout << "Press enter to start game!";
 		std::cin.ignore(255, '\n');
 		std::cin.get();
-		Start(player1, player2, difficulty);
+		Start(player1, player2, gs);
 
-		if (GameOverScreen())
+		if (GameOverScreen(gs.inputDevices))
 		{
-			ResetPlayersData(player1, player2);
+			ResetPlayersData(player1, player2, gs.gameMode);
+			continue;
 		}
 		else
 		{

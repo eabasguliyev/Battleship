@@ -2,20 +2,23 @@
 #include <Windows.h>
 #include "Declarations.h"
 
-int PrintMenu(char** menu, const int size, const int selected_index)
+void PrintMenu(char** options, int size, int selected)
 {
-	SetCenterY();
+	HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD coordinate = { 50, 10 };
 	for (size_t i = 0; i < size; i++)
 	{
-		SetCenterX();
-		if (selected_index == i)
+		SetConsoleCursorPosition(hConsoleOUT, coordinate);
+		if (i == selected)
 		{
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 12);
-			std::cout << menu[i] << std::endl;
-			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-			continue;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), LIGHTRED);
+			std::cout << i + 1 << ". " << options[i] << std::endl;;
+			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), WHITE);
 		}
-		std::cout << menu[i] << std::endl;
+		else
+		{
+			std::cout << i + 1 << ". " << options[i] << std::endl;;
+		}
+		coordinate.Y++;
 	}
-	return 0;
 }

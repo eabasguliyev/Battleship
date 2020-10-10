@@ -15,3 +15,8 @@ void GetCoordinates(int& x, int& y)
 		std::cin >> y;
 	} while (y < 0 || y > 9);
 }
+
+void GetCoordinatesWithMouse(int& x, int& y)
+{
+	return;
+}

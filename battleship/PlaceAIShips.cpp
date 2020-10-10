@@ -5,6 +5,7 @@
 void PlaceAIShips(int** board, int ship_blocks, int ship_id)
 {
 	static int ct = 0;
+	
 	srand(time(NULL));
 	while(true)
 	{
@@ -16,12 +17,13 @@ void PlaceAIShips(int** board, int ship_blocks, int ship_id)
 			int x = rand() % 10;
 			int y = rand() % (10 - ship_blocks);
 
+			//std::cout << x << " " << y << std::endl;
 			if (!CheckOverlap(board, orientation, x, y, ship_blocks))
 			{
 				int counter = 0;
 				while (counter < ship_blocks)
 				{
-					board[x][y++] = ship_id;
+					SetShip(board, x, y++, ship_id);
 					counter++;
 				}
 				return;
@@ -29,14 +31,19 @@ void PlaceAIShips(int** board, int ship_blocks, int ship_id)
 		}
 		else
 		{
+			
 			int x = rand() % (10 - ship_blocks);
 			int y = rand() % 10;
+
+			//std::cout << x << " " << y << std::endl;
+
 			if (!CheckOverlap(board, orientation, x, y, ship_blocks))
 			{
 				int counter = 0;
 				while (counter < ship_blocks)
 				{
-					board[x++][y] = ship_id;
+					//board[x++][y] = ship_id;
+					SetShip(board, x++, y, ship_id);
 					counter++;
 				}
 				return;

@@ -1,31 +1,58 @@
 #include <iostream>
 #include "Player.h"
 #include "Declarations.h"
+#include <windows.h>
+#include <tchar.h>
+#include <strsafe.h>
+#include "Settings.h"
+
 
 
 int main()
 {
-	SetCenterY();
-	SetCenterX();
+	HANDLE hConsoleIN = GetStdHandle(STD_INPUT_HANDLE);
+
+	HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	CONSOLE_CURSOR_INFO cursor_info = {};
+
+	cursor_info.bVisible = false;
+	cursor_info.dwSize = 0;
+
+	SetConsoleCursorInfo(hConsoleOUT, &cursor_info);
+
+	TCHAR consoleNewTitle[MAX_PATH];
+
+	StringCchPrintf(consoleNewTitle, MAX_PATH, TEXT("BATTLESHIP"));
+
+	SetConsoleTitle(consoleNewTitle);
+
+	HWND consoleWindow = GetConsoleWindow();
+	SetWindowLong(consoleWindow, GWL_STYLE, GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
+
+	Settings gs;
+	gs.inputDevices = true;
+	
 	StartScreen();
+	//SoundEffects(0);
 
 	while (true)
 	{
-		short status = GameModeScreen();
+		short status = MainScreen(gs.inputDevices);
 		if (status == 1)
 		{
+			if (gs.gameMode)
+			{
+				system("CLS");
+				gs.diff = GetDiff(gs.inputDevices);
+			}
+
 			system("CLS");
-
-			short difficulty = GetDiff();
-
-			system("CLS");
-
-			Game(difficulty);
+			Game(gs);
 		}
 		else if (status == 2)
 		{
-			system("CLS");
-			Game();
+			GameSettings(gs);
 		}
 		else
 			exit(0);

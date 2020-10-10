@@ -10,7 +10,6 @@ struct Coordinate
 struct Player
 {
 	char* name;
-	bool is_computer = false;
 
 	int score = 0;
 

@@ -3,15 +3,15 @@
 #include <conio.h>
 
 
-short GameModeScreen(bool inputDevices)
+short InputDevicesSettings(bool inputDevices)
 {
-	
+
 	system("CLS");
 
 	int size = 3;
-	char** options = new char*[size];
-	options[0] = _strdup("Singleplayer");
-	options[1] = _strdup("Multiplayer");
+	char** options = new char* [size];
+	options[0] = _strdup("Mouse");
+	options[1] = _strdup("Keyboard");
 	options[2] = _strdup("Back");
 
 	if (inputDevices)

@@ -8,9 +8,7 @@ Player* AISettings()
 	Player* computer = new Player;
 
 	computer->name = _strdup("Computer");
-	computer->is_computer = true;
 	computer->_board.NewBoard();
-	computer->_board.BoardConfAI();
-
+	computer->_board.BoardConf(true);
 	return computer;
 }
