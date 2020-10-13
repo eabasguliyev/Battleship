@@ -34,10 +34,8 @@ int main()
 	ConsoleScreenSettings();
 
 	Settings gs;
-	gs.inputDevices = false;
 	
 	StartScreen();
-	//SoundEffects(0);
 
 	while (true)
 	{
@@ -57,7 +55,13 @@ int main()
 		{
 			GameSettings(gs);
 		}
+		else if (status == 3)
+		{
+
+		}
 		else
+		{
 			exit(0);
+		}
 	}
 }

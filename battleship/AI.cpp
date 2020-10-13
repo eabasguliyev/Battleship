@@ -10,6 +10,8 @@ static char direction_states = 0;
 static int STATE = 0;
 static int hits = 0;
 static short tries = 0;
+static bool diagonal = true;
+static bool best = true;
 static Directions directions;
 
 enum STATUS_CODE {
@@ -125,6 +127,8 @@ void ResetAIData(bool gameOver)
 	{
 		MAX_HIT = 5;
 		MIN_HIT = 2;
+		diagonal = true;
+		best = true;
 	}
 	STATE = 0;
 	tries = 0;
@@ -189,9 +193,6 @@ bool CheckState(int state, char direction_states)
 
 bool CheckMiniBlockOnBoard(int ** board, short min_hit, Coordinate coo, char direction_states)
 {
-	/*std::cout << "Check mini block on board" << std::endl;
-	std::cin.ignore(255, '\n');
-	std::cin.get();*/
 	short hit = 1;
 	short i = 0;
 	short j = 0;
@@ -258,32 +259,32 @@ bool SetDirections(Directions & directions,  char & direction_states)
 	if (!RemainingDirections(direction_states))
 	{
 		ClearStates();
-return false;
+		return false;
 	}
 
 	while (true)
 	{
 		short state = rand() % 4 + 1;
 
-short status = CheckState(state, direction_states);
+		short status = CheckState(state, direction_states);
 
-if (status == 1)
-{
-	continue;
-}
+		if (status == 1)
+		{
+			continue;
+		}
 
-if (state == UP || state == DOWN)
-directions.orientation = false;
-else
-directions.orientation = true;
+		if (state == UP || state == DOWN)
+		directions.orientation = false;
+		else
+		directions.orientation = true;
 
-if (state == UP || state == LEFT)
-directions.direction = false;
-else
-directions.direction = true;
+		if (state == UP || state == LEFT)
+		directions.direction = false;
+		else
+		directions.direction = true;
 
-SetState(state, direction_states);
-return true;
+		SetState(state, direction_states);
+		return true;
 	}
 }
 
@@ -487,16 +488,17 @@ static Coordinate last_move;
 static Coordinate current_coordinate;
 static char samesized_ships = 0;
 
-static bool diagonal = true;
-static bool best = true;
-
-short GetMethod()
+enum Method
+{
+	Best_Coordinates = 1, Diagonal, Random
+};
+short GetMethod(int size)
 {
 	while (true)
 	{
-		short rnd = rand() % 3;
+		short rnd = rand() % size;
 
-		if ((rnd == 1 && best) || (rnd == 2 && diagonal) || (rnd == 3))
+		if ((rnd == Best_Coordinates && best) || (rnd == Diagonal && diagonal) || (rnd == Random))
 		{
 			return rnd;
 		}
@@ -511,24 +513,24 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 
 		if (STATE == FIRST_ATACK)
 		{
-			if (diff == Hard)
+			if (diff >= Normal)
 			{
-				short method = GetMethod();
-				if (method == 1)
+				short method = GetMethod(4);
+				if (method == Best_Coordinates && diff == Hard)
 				{
 					if (!GetBestCoordinate(human->_board.board, computer->_coordinate))
 					{
 						best = false;
 					}
 				}
-				else if (method == 2)
+				else if (method == Diagonal)
 				{
 					if (!RandomCoordinateOnDiagonal(human->_board.board, computer->_coordinate))
 					{
 						diagonal = false;
 					}
 				}
-				else if (method == 3)
+				else if (method == Random)
 				{
 					RandomCoordinate(human->_board.board, computer->_coordinate);
 				}
