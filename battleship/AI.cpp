@@ -258,32 +258,32 @@ bool SetDirections(Directions & directions,  char & direction_states)
 	if (!RemainingDirections(direction_states))
 	{
 		ClearStates();
-		return false;
+return false;
 	}
 
 	while (true)
 	{
 		short state = rand() % 4 + 1;
 
-		short status = CheckState(state, direction_states);
+short status = CheckState(state, direction_states);
 
-		 if (status == 1)
-		{
-			continue;
-		}
+if (status == 1)
+{
+	continue;
+}
 
-		if (state == UP || state == DOWN)
-			directions.orientation = false;
-		else
-			directions.orientation = true;
+if (state == UP || state == DOWN)
+directions.orientation = false;
+else
+directions.orientation = true;
 
-		if (state == UP || state == LEFT)
-			directions.direction = false;
-		else
-			directions.direction = true;
+if (state == UP || state == LEFT)
+directions.direction = false;
+else
+directions.direction = true;
 
-		SetState(state, direction_states);
-		return true;
+SetState(state, direction_states);
+return true;
 	}
 }
 
@@ -325,7 +325,7 @@ short GetMinBlock(int** board)
 	}
 }
 
-short GetMaxBlock(int ** board)
+short GetMaxBlock(int** board)
 {
 	int max = 0;
 	int counter = 0;
@@ -354,38 +354,182 @@ short GetMaxBlock(int ** board)
 }
 
 
+bool CheckBestCoordinates(int** board);
+
+short evenNumber()
+{
+	while (true)
+	{
+		int num = rand() % 11;
+		if (num % 2 == 0)
+			return num;
+	}
+}
+bool GetBestCoordinate(int** board, Coordinate & coordinate)
+{
+	Coordinate coo;
+
+	if (!CheckBestCoordinates(board))
+	{
+		return false;
+	}
+
+	while (true)
+	{
+		int x = evenNumber();
+		int y = evenNumber();
+
+		coo.x = (x > 5) ? x - 1 : x;
+		coo.y = (y > 5) ? y - 1 : y;
+
+		if (CheckCoordinates(board, coo, true))
+		{
+			coordinate.x = coo.x;
+			coordinate.y = coo.y;
+			return true;
+		}
+	}
+}
+bool CheckBestCoordinates(int** board)
+{
+	int x= 0, y = 0;
+	Coordinate coo;
+	for (size_t i = 0; i < 6; i++)
+	{
+		for (size_t i = 0; i < 6; i++)
+		{
+			coo.x = x;
+			coo.y = y;
+
+			if(CheckCoordinates(board, coo, true))
+			{
+				return true;
+			}
+			if (y == 4)
+			{
+				y++;
+			}
+			else
+			{
+				y += 2;
+			}
+		}
+		if (x == 4)
+		{
+			x++;
+		}
+		else
+		{
+			x += 2;
+		}
+		y = 0;
+	}
+
+	return false;
+}
+
+bool CheckDiagonalSpaces(int** board)
+{
+	Coordinate coo;
+	for (size_t i = 0; i < 10; i++)
+	{
+
+		if (board[i][i] == 0)
+		{
+			coo.x = i;
+			coo.y = i;
+		}
+		else if (board[i][9 - i] == 0)
+		{
+			coo.x = i;
+			coo.y = 9 - i;
+		}
+		else
+		{
+			continue;
+		}
+
+		if (CheckCoordinates(board, coo, true))
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool RandomCoordinateOnDiagonal(int ** board, Coordinate &coordinate)
+{
+	Coordinate rand_coo;
+
+	if (!CheckDiagonalSpaces(board))
+	{
+		return false;
+	}
+	while (true)
+	{
+		short rand_int = rand() % 10;
+		bool lr = rand() % 2;
+
+		rand_coo.x = rand_int;
+		rand_coo.y = (lr) ? rand_int : 9 - rand_int;
+
+		if (CheckCoordinates(board, rand_coo, true))
+		{
+			coordinate.x = rand_coo.x;
+			coordinate.y = rand_coo.y;
+			return true;
+		}
+	}
+	
+}
 const int MAX_TRY = 4;
 static Coordinate last_move;
 static Coordinate current_coordinate;
 static char samesized_ships = 0;
 
+static bool diagonal = true;
+static bool best = true;
 bool  AI(Player* human, Player* computer, short diff, bool sound)
 {
+	
 	srand(time(NULL));
 	while (1)
 	{
-		/*std::cout << "Min sized ships: " << MIN_HIT << std::endl;
-		std::cout << "Max sized ships: " << MAX_HIT << std::endl;
-		std::cout << "State: " << STATE << std::endl;*/
 
 		if (STATE == FIRST_ATACK)
 		{
-			// random x y
-			computer->_coordinate = RandomCoordinate(human->_board);
-
-			//std::cout << computer->_coordinate.x << ' ' << computer->_coordinate.y;
 			if (diff == Hard)
 			{
+				if (best)
+				{
+					if (!GetBestCoordinate(human->_board.board, computer->_coordinate))
+					{
+						best = false;
+					}
+				}
+				else if (diagonal)
+				{
+					if (!RandomCoordinateOnDiagonal(human->_board.board, computer->_coordinate))
+					{
+						diagonal = false;
+					}
+				}
+				else
+				{
+					RandomCoordinate(human->_board.board, computer->_coordinate);
+				}
+
 				ClearStates();
 				if (!CheckMiniBlockOnBoard(human->_board.board, MIN_HIT, computer->_coordinate, direction_states))
 				{
-					//std::cout << "can not sized";
 					ClearStates();
-					//std::cout << std::bitset<8>(direction_states) << std::endl;
 					continue;
 				}
 			}
-			//std::cout << std::endl;
+			else
+			{
+				RandomCoordinate(human->_board.board, computer->_coordinate);
+			}
 			if (AttackToOpponent(human, computer))
 			{
 				if (AIChecker(human->_board))
@@ -402,17 +546,9 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 					SoundEffects(1);
 					Sleep(1000);
 				}
-				/*std::cout << "Hit: ";
-				
-				std::cin.ignore(255, '\n');
-
-				std::cin.get();*/
 				
 				continue;
 			}
-			/*std::cout << "Missed: ";
-			std::cin.ignore(255, '\n');
-			std::cin.get();*/
 			ResetAIData(false);
 			return false;
 		}
@@ -426,14 +562,6 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 				if (hits == MAX_HIT)
 				{
 					MAX_HIT = GetMaxBlock(human->_board.board);
-					/*if (MAX_HIT == 3 && !(samesized_ships & 1))
-					{
-						samesized_ships |= 1;
-					}
-					else
-					{
-						MAX_HIT--;
-					}*/
 					ClearStates();
 					ResetAIData(false);
 					break;
@@ -443,15 +571,12 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 
 				if (STATE == TRYSIDES && diff != Easy)
 				{
-					std::cout << std::bitset<8>(direction_states) << std::endl;
 					if (!SetDirections(directions, direction_states))
 					{
 						ClearStates();
 						ResetAIData(false);
 						return false;
 					}
-
-					std::cout << std::bitset<8>(direction_states) << std::endl;
 					if (!CheckSides(human->_board.board, current_coordinate, directions))
 					{
 						continue;
@@ -460,24 +585,11 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 				}
 				
 				status = Attack(human, computer, current_coordinate, directions);
-				if (status == ONE_MORE_ATTACK || status == AIWIN && sound)
+				if ((status == ONE_MORE_ATTACK || status == AIWIN ) && sound)
 				{
 					SoundEffects(1);
 					Sleep(1000);
 				}
-				/*std::cout << current_coordinate.x << ' ' << current_coordinate.y;
-
-				std::cin.get();*/
-				/*if (directions.orientation)
-				{
-					status = HorizontalAttack(human, computer, current_coordinate);
-				}
-				else
-				{
-					status = VerticalAttack(human, computer, current_coordinate);
-				}*/
-
-				//human->_board.PrintBoard();
 
 				if (status == AIWIN)
 				{
@@ -490,17 +602,11 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 					
 					CopyCoordinate(last_move, current_coordinate);
 					(STATE == TRYSIDES) ? STATE++ : false;
-					hits++; 
-					/*std::cout << "Hit: ";
-					std::cin.ignore(255, '\n');
-					std::cin.get();*/
+					hits++;
 					continue;
 				}
 				else
 				{
-					/*std::cout << "Missed: ";
-					std::cin.ignore(255, '\n');
-					std::cin.get();*/
 					if (STATE == TRYSIDES)
 					{
 						if (diff == Easy)
@@ -526,7 +632,6 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 
 						if (status == NEXT_TURN_OPPOSITE_DIRECTION)
 						{
-							//ClearStates(direction_states);
 							return false;
 						}
 						continue;
@@ -549,7 +654,6 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 								return false;
 							}
 							break;
-							//continue;
 						}
 
 						GoBack(directions, -1, current_coordinate);

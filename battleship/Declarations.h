@@ -47,7 +47,7 @@ void ResetAIData(bool gameOver = false);
 void ClearStates();
 bool  AI(Player* human, Player* computer, short diff, bool sound);
 void CopyCoordinate(Coordinate& coo1, Coordinate& coo2);
-Coordinate RandomCoordinate(Board board);
+void RandomCoordinate(int** board, Coordinate& coordinate);
 void TypingEffect(const char* text);
 void StartScreen();
 short GameModeScreen(bool inputDevices);

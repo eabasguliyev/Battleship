@@ -1,16 +1,18 @@
 #include "Player.h"
 #include <time.h>
 
-Coordinate RandomCoordinate(Board board)
+void RandomCoordinate(int** board, Coordinate & coordinate)
 {
-	Coordinate coordinate;
+	Coordinate temp;
 	while (true)
 	{
-		coordinate.x = rand() % 10;
-		coordinate.y = rand() % 10;
-		if (CheckCoordinates(board.board, coordinate, true))
+		temp.x = rand() % 10;
+		temp.y = rand() % 10;
+		if (CheckCoordinates(board, temp, true))
 		{
-			return coordinate;
+			coordinate.x = temp.x;
+			coordinate.y = temp.y;
+			return;
 		}
 	}
 }

@@ -6,9 +6,7 @@
 #include <strsafe.h>
 #include "Settings.h"
 
-
-
-int main()
+void ConsoleScreenSettings()
 {
 	HANDLE hConsoleIN = GetStdHandle(STD_INPUT_HANDLE);
 
@@ -29,9 +27,14 @@ int main()
 
 	HWND consoleWindow = GetConsoleWindow();
 	SetWindowLong(consoleWindow, GWL_STYLE, GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
+}
+
+int main()
+{
+	ConsoleScreenSettings();
 
 	Settings gs;
-	gs.inputDevices = true;
+	gs.inputDevices = false;
 	
 	StartScreen();
 	//SoundEffects(0);
