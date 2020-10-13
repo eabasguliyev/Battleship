@@ -9,6 +9,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 {
 	int turn = Draw();
 	//int turn = true;
+
 	while (true)
 	{
 		if (turn)
@@ -20,6 +21,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 				short status = AI(player1, player2, gs.diff, gs.sound);
 				if (status)
 				{
+					PrintBoards(player2, player1, gs.gameMode);
 					PrintWinner(player2);
 					PrintScores(player1, player2);
 					break;
@@ -34,7 +36,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 					if (gs.sound)
 					{
 						SoundEffects(1);
-						Sleep(500);
+						Sleep(1000);
 					}
 
 					if (player1->_board.CheckBlocks())
@@ -59,7 +61,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 				if (gs.sound)
 				{
 					SoundEffects(1);
-					Sleep(500);
+					Sleep(1000);
 				}
 				if (player2->_board.CheckBlocks())
 				{

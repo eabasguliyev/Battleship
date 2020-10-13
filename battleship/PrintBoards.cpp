@@ -14,7 +14,6 @@ void PrintBoards(Player* defender, Player* attacker, bool gameMode)
 	SetConsoleCursorPosition(hConsoleOUT, coordinate);
 
 	
-
 	//std::cout << defender->name << "'s board\n\n";
 	defender->_board.PrintOpponentBoard({ 22, 8 });
 	//std::cout << attacker->name << "'s board\n\n";

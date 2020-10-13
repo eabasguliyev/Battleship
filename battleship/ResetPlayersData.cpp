@@ -12,7 +12,7 @@ void ResetPlayersData(Player * player1, Player * player2, bool is_computer)
 	if (is_computer)
 	{
 		ClearStates();
-		ResetAIData();
+		ResetAIData(true);
 		player2->_board.BoardConf(true);
 	}
 	else

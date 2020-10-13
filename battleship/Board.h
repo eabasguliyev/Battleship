@@ -2,6 +2,11 @@
 #include "Declarations.h"
 #include <time.h>
 
+struct Directions
+{
+	bool orientation = false;
+	bool direction = false;
+};
 struct Board
 {
 	int** board;

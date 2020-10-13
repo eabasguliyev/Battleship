@@ -1,9 +1,12 @@
-﻿  PrintBoards.cpp
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(20,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(26,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(70,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(76,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(98,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(100,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\elgun\source\repos\battleship\battleship\Board.h(111,24): warning C4018: '<': signed/unsigned mismatch
-  battleship.vcxproj -> C:\Users\elgun\source\repos\battleship\bin\Win32\Debug\battleship.exe
+﻿  AI.cpp
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(75,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(81,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(103,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(105,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\Board.h(116,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\Desktop\source\battleship3\battleship\AI.cpp(257,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\elgun\Desktop\source\battleship3\battleship\AI.cpp(364,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\elgun\Desktop\source\battleship3\battleship\AI.cpp(326): warning C4715: 'GetMinBlock': not all control paths return a value
+  battleship.vcxproj -> C:\Users\elgun\Desktop\source\battleship3\bin\Win32\Debug\battleship.exe

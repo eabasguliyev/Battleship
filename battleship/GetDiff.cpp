@@ -5,8 +5,6 @@
 short GetDiff(bool inputDevices)
 {
 
-	short selected = 1;
-
 	system("CLS");
 
 	int size = 4;
