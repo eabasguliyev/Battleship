@@ -489,6 +489,19 @@ static char samesized_ships = 0;
 
 static bool diagonal = true;
 static bool best = true;
+
+short GetMethod()
+{
+	while (true)
+	{
+		short rnd = rand() % 3;
+
+		if ((rnd == 1 && best) || (rnd == 2 && diagonal) || (rnd == 3))
+		{
+			return rnd;
+		}
+	}
+}
 bool  AI(Player* human, Player* computer, short diff, bool sound)
 {
 	
@@ -500,23 +513,28 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 		{
 			if (diff == Hard)
 			{
-				if (best)
+				short method = GetMethod();
+				if (method == 1)
 				{
 					if (!GetBestCoordinate(human->_board.board, computer->_coordinate))
 					{
 						best = false;
 					}
 				}
-				else if (diagonal)
+				else if (method == 2)
 				{
 					if (!RandomCoordinateOnDiagonal(human->_board.board, computer->_coordinate))
 					{
 						diagonal = false;
 					}
 				}
-				else
+				else if (method == 3)
 				{
 					RandomCoordinate(human->_board.board, computer->_coordinate);
+				}
+				else
+				{
+					continue;
 				}
 
 				ClearStates();
