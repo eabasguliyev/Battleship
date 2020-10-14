@@ -185,12 +185,12 @@
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="StartScreen.cpp" />
     <ClCompile Include="TypingEffect.cpp" />
+    <ClCompile Include="Wait.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
     <ClInclude Include="Declarations.h" />
     <ClInclude Include="Settings.h" />
-    <ClInclude Include="HardModePart.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

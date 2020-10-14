@@ -1,6 +1,6 @@
 struct Settings
 {
-	// flase keyboard
+	// false keyboard
 	// true mouse
 	bool inputDevices = false;
 	bool gameMode = false;

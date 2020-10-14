@@ -5,14 +5,14 @@
 
 void Game(Settings gs)
 {
-	/*Player * player1 = AISettings(difficulty);
+	Player * player1 = AISettings();
 
-	player1->name = _strdup("Elgun");*/
-	Player* player1 = CreatePlayer();
+	player1->name = _strdup("Elgun");
+	//Player* player1 = CreatePlayer();
 
-	player1->_board.NewBoard();
+	//player1->_board.NewBoard();
 
-	player1->_board.BoardConf(false);
+	//player1->_board.BoardConf(false);
 
 
 	Player* player2;
@@ -33,11 +33,8 @@ void Game(Settings gs)
 
 	while(1)
 	{
-		std::cout << "Press enter to start game!";
-		std::cin.ignore(255, '\n');
-		std::cin.get();
+		Wait();
 		Start(player1, player2, gs);
-
 		if (GameOverScreen(gs.inputDevices))
 		{
 			ResetPlayersData(player1, player2, gs.gameMode);

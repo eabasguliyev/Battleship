@@ -11,11 +11,11 @@ void PrintBoards(Player* defender, Player* attacker, bool gameMode)
 		std::cout << defender->name << " turn!\n\n";
 	else
 		std::cout << attacker->name << " turn!\n\n";
+
+	SetConsoleCursorPosition(hConsoleOUT, { 45, 0 });
+	PrintScores(defender, attacker);
 	SetConsoleCursorPosition(hConsoleOUT, coordinate);
 
-	
-	//std::cout << defender->name << "'s board\n\n";
 	defender->_board.PrintOpponentBoard({ 22, 8 });
-	//std::cout << attacker->name << "'s board\n\n";
 	attacker->_board.PrintBoard({ 60, 8 });
 }

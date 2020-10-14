@@ -27,12 +27,14 @@ enum SOUNDS
 	EXPLODE = 0
 };
 
-#define LIGHTRED 12
-#define RED 4
 #define GREEN 2
+#define RED 4
+#define YELLOW 6
 #define WHITE 7
+#define LIGHTRED 12
 #define MENU_ITEM_SIZE 15
 
+void Wait();
 COORD GetConsoleCaretPosition(HANDLE hConsoleOutput);
 void ClearConsoleArea(COORD pos1, COORD pos2);
 void GameSettings(Settings &GS);

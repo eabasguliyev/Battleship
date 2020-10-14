@@ -2,7 +2,6 @@
 #include "Player.h"
 #include "Declarations.h"
 #include "Settings.h"
-#include <bitset>
 
 static int MAX_HIT = 5;
 static int MIN_HIT = 2;
@@ -255,7 +254,6 @@ bool CheckMiniBlockOnBoard(int ** board, short min_hit, Coordinate coo, char dir
 
 bool SetDirections(Directions & directions,  char & direction_states)
 {
-	srand(time(NULL));
 	if (!RemainingDirections(direction_states))
 	{
 		ClearStates();
@@ -506,8 +504,6 @@ short GetMethod(int size)
 }
 bool  AI(Player* human, Player* computer, short diff, bool sound)
 {
-	
-	srand(time(NULL));
 	while (1)
 	{
 

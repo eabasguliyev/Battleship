@@ -33,13 +33,19 @@ struct Board
 				switch (board[i][j])
 				{
 				case MISSED:
+				{
+					SetConsoleTextAttribute(hConsoleOUT, YELLOW);
 					std::cout << " * ";
+				}
 					break;
 				case SPACE:
 					std::cout << " . ";
 					break;
 				case HIT:
+				{
+					SetConsoleTextAttribute(hConsoleOUT, RED);
 					std::cout << " X ";
+				}
 					break;
 				case DESTROYER:
 					std::cout << " D ";
@@ -59,6 +65,7 @@ struct Board
 				default:
 					break;
 				}
+				SetConsoleTextAttribute(hConsoleOUT, GREEN);
 			}
 			std::cout << std::endl;
 			SetConsoleTextAttribute(hConsoleOUT, WHITE);
@@ -83,15 +90,22 @@ struct Board
 				switch (board[i][j])
 				{
 				case MISSED:
+				{
+					SetConsoleTextAttribute(hConsoleOUT, YELLOW);
 					std::cout << " * ";
+				}
 					break;
 				case HIT:
+				{
+					SetConsoleTextAttribute(hConsoleOUT, GREEN);
 					std::cout << " X ";
+				}
 					break;
 				default:
 					std::cout << " . ";
 					break;
 				}
+				SetConsoleTextAttribute(hConsoleOUT, RED);
 			}
 			std::cout << std::endl;
 			SetConsoleTextAttribute(hConsoleOUT, WHITE);

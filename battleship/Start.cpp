@@ -8,7 +8,6 @@
 void Start(Player * player1, Player * player2, Settings gs)
 {
 	int turn = Draw();
-	//int turn = true;
 
 	while (true)
 	{
@@ -81,7 +80,5 @@ void Start(Player * player1, Player * player2, Settings gs)
 		}
 	}
 
-	std::cin.ignore(255, '\n');
-	std::cout << "Press enter to continue";
-	std::cin.get();
+	Wait();
 }

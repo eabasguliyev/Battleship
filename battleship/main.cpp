@@ -34,9 +34,9 @@ int main()
 	ConsoleScreenSettings();
 
 	Settings gs;
-	
+	gs.inputDevices = true;
 	StartScreen();
-
+	srand(time(NULL));
 	while (true)
 	{
 		short status = MainScreen(gs.inputDevices);
@@ -57,7 +57,8 @@ int main()
 		}
 		else if (status == 3)
 		{
-
+			system("CLS");
+			std::cout << "About\n";
 		}
 		else
 		{

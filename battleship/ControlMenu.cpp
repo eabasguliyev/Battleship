@@ -7,19 +7,11 @@ short MenuInputWithMouse(char** options, int size)
 	HANDLE hConsoleIN = GetStdHandle(STD_INPUT_HANDLE);
 
 	HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	//CONSOLE_CURSOR_INFO cursor_info = {};
-
 	INPUT_RECORD input_record = {};
 
 	unsigned long nRecordsRead = 0;
 
 	COORD coordinate = { 50, 10 };
-
-	//cursor_info.bVisible = false;
-	// cursor_info.dwSize = 0;
-
-	//SetConsoleCursorInfo(hConsoleOUT, &cursor_info);
 
 	SetConsoleMode(hConsoleIN, ENABLE_MOUSE_INPUT);
 	int selected = 0;
@@ -43,7 +35,7 @@ short MenuInputWithMouse(char** options, int size)
 				{
 					flag = true;
 					selected = y % coordinate.Y + 1;
-					if (input_record.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED && selected)
+					if (input_record.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 					{
 						return selected;
 					}
