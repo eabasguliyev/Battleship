@@ -35,6 +35,7 @@ enum SOUNDS
 #define MENU_ITEM_SIZE 15
 
 void Wait();
+//void SetConsoleCursor(bool flag);
 COORD GetConsoleCaretPosition(HANDLE hConsoleOutput);
 void ClearConsoleArea(COORD pos1, COORD pos2);
 void GameSettings(Settings &GS);

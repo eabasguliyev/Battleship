@@ -1,0 +1,47 @@
+﻿  AI.cpp
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\AI.cpp(145,6): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\AI.cpp(438,13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\AI.cpp(439,13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\AI.cpp(443,13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\AI.cpp(444,17): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  ClearConsoleArea.cpp
+  ControlMenu.cpp
+  GameOverScreen.cpp
+  AISettings.cpp
+  AttackToOpponent.cpp
+  CheckOverlap.cpp
+  CreatePlayer.cpp
+  DeletePlayersData.cpp
+  Draw.cpp
+  GameSettings.cpp
+  GetCaretPosition.cpp
+  GetCoordinates.cpp
+  GameModeScreen.cpp
+  GetDiff.cpp
+  GetOrientation.cpp
+  InputDevicesSettings.cpp
+  InputName.cpp
+  GetValidCoordinates.cpp
+  main.cpp
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\main.cpp(39,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\AI.cpp(325): warning C4715: 'GetMinBlock': not all control paths return a value
+  Compiling...
+  Game.cpp
+  MainScreen.cpp
+  PlaceAIShips.cpp
+  PlaceTheShip.cpp
+  SoundEffects.cpp
+  PrintBoards.cpp
+  PrintMenu.cpp
+  PrintScores.cpp
+  PrintWinner.cpp
+  RandomCoordinate.cpp
+  ResetPlayersData.cpp
+  SoundSettings.cpp
+  Start.cpp
+  StartScreen.cpp
+  TypingEffect.cpp
+  Wait.cpp
+  Generating Code...
+  battleship.vcxproj -> C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\bin\x64\Debug\battleship.exe

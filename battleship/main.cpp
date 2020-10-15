@@ -12,13 +12,6 @@ void ConsoleScreenSettings()
 
 	HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
 
-	CONSOLE_CURSOR_INFO cursor_info = {};
-
-	cursor_info.bVisible = false;
-	cursor_info.dwSize = 0;
-
-	SetConsoleCursorInfo(hConsoleOUT, &cursor_info);
-
 	TCHAR consoleNewTitle[MAX_PATH];
 
 	StringCchPrintf(consoleNewTitle, MAX_PATH, TEXT("BATTLESHIP"));
@@ -27,14 +20,28 @@ void ConsoleScreenSettings()
 
 	HWND consoleWindow = GetConsoleWindow();
 	SetWindowLong(consoleWindow, GWL_STYLE, GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
+
+	CONSOLE_CURSOR_INFO cursor_info = {};
+
+	cursor_info.bVisible = false;
+	cursor_info.dwSize = 1;
+	SetConsoleCursorInfo(hConsoleOUT, &cursor_info);
 }
+
+/*void SetConsoleCursor(bool flag)
+{
+	CONSOLE_CURSOR_INFO cursor_info = {};
+
+	cursor_info.bVisible = flag;
+	cursor_info.dwSize = 1;
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info);
+}*/
 
 int main()
 {
-	ConsoleScreenSettings();
-
 	Settings gs;
 	gs.inputDevices = true;
+	ConsoleScreenSettings();
 	StartScreen();
 	srand(time(NULL));
 	while (true)

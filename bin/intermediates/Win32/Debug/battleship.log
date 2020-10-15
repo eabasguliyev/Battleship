@@ -1,0 +1,9 @@
+﻿  Game.cpp
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  battleship.vcxproj -> C:\Users\abba_9lhw\Downloads\battleship-master\battleship-master\bin\Win32\Debug\battleship.exe

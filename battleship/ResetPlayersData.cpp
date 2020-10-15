@@ -7,8 +7,8 @@ void ResetPlayersData(Player * player1, Player * player2, bool is_computer)
 	player2->_board.ResetBoard();
 	player2->_board.ResetBlocks();
 
-	//player1->_board.BoardConf(false);
-	player1->_board.BoardConf(true);
+	player1->_board.BoardConf(false);
+	//player1->_board.BoardConf(true);
 
 	if (is_computer)
 	{

@@ -52,6 +52,10 @@ void GameSettings(Settings & GS)
 		{
 			short status = InputDevicesSettings(GS.inputDevices);
 			SetChanges(status, GS.inputDevices);
+			/*if (status != 3)
+			{
+				SetConsoleCursor(GS.inputDevices);
+			}*/
 		}break;
 		case 4:
 		{
