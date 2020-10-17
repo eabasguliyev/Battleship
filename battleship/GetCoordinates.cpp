@@ -1,7 +1,7 @@
 #include <iostream>
+#include "Player.h"
 
-
-void GetCoordinates(int& x, int& y)
+void GetCoordinates(Coordinate & coordinate)
 {
 	char cx, cy;
 	do
@@ -16,13 +16,11 @@ void GetCoordinates(int& x, int& y)
 		std::cin >> cy;
 	} while (int(cy) < 48 || int(cy) > 57);
 
-
-	x = int(cx) - 48;
-	y = int(cy) - 48;
-
+	coordinate.x = int(cx) - 48;
+	coordinate.y = int(cy) - 48;
 }
 
-void GetCoordinatesWithMouse(int& x, int& y)
+void GetCoordinatesWithMouse(Coordinate & coordinate)
 {
 	return;
 }

@@ -1,6 +1,7 @@
 #include <iostream>
+#include "Player.h"
 
-bool CheckOverlap(int ** board, char orientation, int x, int y, int ship_blocks)
+bool CheckOverlap(int ** board, char orientation, Coordinate coordinate, int ship_blocks)
 {
 	
 	ship_blocks++;
@@ -8,55 +9,55 @@ bool CheckOverlap(int ** board, char orientation, int x, int y, int ship_blocks)
 
 	if (orientation == 'h')
 	{
-		if (y > 0)
+		if (coordinate.y > 0)
 		{
 			ship_blocks++;
-			y--;
+			coordinate.y--;
 		}
-
-		while (counter < ship_blocks && y >= 0 && y <= 9)
+		
+		while (counter < ship_blocks && coordinate.y >= 0 && coordinate.y <= 9)
 		{
 			
-			if (board[x][y] > 1)
+			if (board[coordinate.x][coordinate.y] > 1)
 			{
 				return true;
 			}
-			else if (x > 0 && (board[x - 1][y] > 1))
+			else if (coordinate.x > 0 && (board[coordinate.x - 1][coordinate.y] > 1))
 			{
 				return true;
 			}
-			else if (x < 9 && (board[x + 1][y] > 1))
+			else if (coordinate.x < 9 && (board[coordinate.x + 1][coordinate.y] > 1))
 			{
 				return true;
 			}
 			counter++;
-			y++;
+			coordinate.y++;
 		}
 	}
 	else
 	{
-		if (x > 0)
+		if (coordinate.x > 0)
 		{
 			ship_blocks++;
-			x--;
+			coordinate.x--;
 		}
 		
-		while (counter < ship_blocks && x >= 0 && x <= 9)
+		while (counter < ship_blocks && coordinate.x >= 0 && coordinate.x <= 9)
 		{
-			if (board[x][y] > 1)
+			if (board[coordinate.x][coordinate.y] > 1)
 			{
 				return true;
 			}
-			else if (y > 0 && (board[x][y - 1] > 1))
+			else if (coordinate.y > 0 && (board[coordinate.x][coordinate.y - 1] > 1))
 			{
 				return true;
 			}
-			else if (y < 9 && (board[x][y + 1] > 1))
+			else if (coordinate.y < 9 && (board[coordinate.x][coordinate.y + 1] > 1))
 			{
 				return true;
 			}
 			counter++;
-			x++;
+			coordinate.x++;
 		}
 	}
 

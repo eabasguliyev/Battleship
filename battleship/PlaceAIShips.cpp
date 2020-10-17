@@ -1,10 +1,11 @@
 #include <iostream>
 #include "Board.h"
+#include "Player.h"
 #include <time.h>
 
 void PlaceAIShips(int** board, int ship_blocks, int ship_id)
 {
-	
+	Coordinate coordinate;
 	
 	while(true)
 	{
@@ -12,15 +13,15 @@ void PlaceAIShips(int** board, int ship_blocks, int ship_id)
 
 		if (orientation == 'h')
 		{
-			int x = rand() % 10;
-			int y = rand() % (10 - ship_blocks);
+			coordinate.x = rand() % 10;
+			coordinate.y = rand() % (10 - ship_blocks);
 
-			if (!CheckOverlap(board, orientation, x, y, ship_blocks))
+			if (!CheckOverlap(board, orientation, coordinate, ship_blocks))
 			{
 				int counter = 0;
 				while (counter < ship_blocks)
 				{
-					SetShip(board, x, y++, ship_id);
+					SetShip(board, coordinate.x, coordinate.y++, ship_id);
 					counter++;
 				}
 				return;
@@ -29,15 +30,15 @@ void PlaceAIShips(int** board, int ship_blocks, int ship_id)
 		else
 		{
 			
-			int x = rand() % (10 - ship_blocks);
-			int y = rand() % 10;
+			coordinate.x = rand() % (10 - ship_blocks);
+			coordinate.y = rand() % 10;
 
-			if (!CheckOverlap(board, orientation, x, y, ship_blocks))
+			if (!CheckOverlap(board, orientation, coordinate, ship_blocks))
 			{
 				int counter = 0;
 				while (counter < ship_blocks)
 				{
-					SetShip(board, x++, y, ship_id);
+					SetShip(board, coordinate.x++, coordinate.y, ship_id);
 					counter++;
 				}
 				return;
