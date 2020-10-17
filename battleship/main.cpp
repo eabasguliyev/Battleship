@@ -28,15 +28,6 @@ void ConsoleScreenSettings()
 	SetConsoleCursorInfo(hConsoleOUT, &cursor_info);
 }
 
-/*void SetConsoleCursor(bool flag)
-{
-	CONSOLE_CURSOR_INFO cursor_info = {};
-
-	cursor_info.bVisible = flag;
-	cursor_info.dwSize = 1;
-	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursor_info);
-}*/
-
 int main()
 {
 	Settings gs;
@@ -66,6 +57,7 @@ int main()
 		{
 			system("CLS");
 			std::cout << "About\n";
+			Wait();
 		}
 		else
 		{

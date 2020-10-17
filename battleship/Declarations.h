@@ -11,7 +11,7 @@ enum GAMEMODE
 
 enum DIFFICULTY
 {
-	VeryEasy = 1, Easy, Normal, Hard, VeryHard
+	VeryEasy = 1, Easy, Normal, Hard
 };
 enum ELEMENTIDS
 {
@@ -24,8 +24,9 @@ enum ARROWKEYS {
 
 enum SOUNDS
 {
-	EXPLODE = 0
+	MISS_SOUND, HIT_SOUND
 };
+
 
 #define GREEN 2
 #define RED 4
@@ -34,8 +35,9 @@ enum SOUNDS
 #define LIGHTRED 12
 #define MENU_ITEM_SIZE 15
 
+short GameSettingsScreen(bool inputDevices);
 void Wait();
-//void SetConsoleCursor(bool flag);
+bool CheckAndSet(int** board, int ship_blocks, int ship_id, char orientation, Coordinate coordinate);
 COORD GetConsoleCaretPosition(HANDLE hConsoleOutput);
 void ClearConsoleArea(COORD pos1, COORD pos2);
 void GameSettings(Settings &GS);

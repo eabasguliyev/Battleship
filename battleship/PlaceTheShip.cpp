@@ -7,7 +7,7 @@ void SetShip(int** board, int x, int y, int ship_id)
 	board[x][y] = ship_id;
 }
 
-void CheckAndSet(int ** board, int ship_blocks, int ship_id, char orientation, Coordinate coordinate)
+bool CheckAndSet(int ** board, int ship_blocks, int ship_id, char orientation, Coordinate coordinate)
 {
 	if (orientation == 'h')
 	{
@@ -21,7 +21,7 @@ void CheckAndSet(int ** board, int ship_blocks, int ship_id, char orientation, C
 				SetShip(board, coordinate.x, coordinate.y++, ship_id);
 				counter++;
 			}
-			return;
+			return true;
 		}
 
 	}
@@ -37,9 +37,11 @@ void CheckAndSet(int ** board, int ship_blocks, int ship_id, char orientation, C
 				SetShip(board, coordinate.x++, coordinate.y, ship_id);
 				counter++;
 			}
-			return;
+			return true;
 		}
 	}
+
+	return false;
 }
 
 void PlaceTheShip(int ** board, int ship_blocks, int ship_id)
@@ -82,7 +84,22 @@ void PlaceTheShip(int ** board, int ship_blocks, int ship_id)
 
 		GetCoordinates(coordinate);
 
-		if (orientation == 'h')
+		if (!CheckAndSet(board, ship_blocks, ship_id, orientation, coordinate))
+		{
+			caret_position = GetConsoleCaretPosition(hConsoleOUT);
+
+			if (caret_position.Y >= max_coordinates.Y)
+			{
+				ClearConsoleArea({ 0, 0 }, { 30, 25 });
+				SetConsoleCursorPosition(hConsoleOUT, { 0 , 0 });
+			}
+
+			std::cout << "\nTry Again!\n\n";
+			continue;
+		}
+
+		return;
+		/*if (orientation == 'h')
 		{
 			if (!(coordinate.y + ship_blocks > 10 || CheckOverlap(board, orientation, coordinate, ship_blocks)))
 			{
@@ -112,17 +129,7 @@ void PlaceTheShip(int ** board, int ship_blocks, int ship_id)
 				}
 				return;
 			}
-		}
-
-		caret_position = GetConsoleCaretPosition(hConsoleOUT);
-
-		if (caret_position.Y >= max_coordinates.Y)
-		{
-			ClearConsoleArea({ 0, 0 }, { 30, 25 });
-			SetConsoleCursorPosition(hConsoleOUT, { 0 , 0 });
-		}
-
-		std::cout << "\nTry Again!\n\n";
+		}*/
 	}
 
 	system("CLS");

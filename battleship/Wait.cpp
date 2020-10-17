@@ -15,5 +15,6 @@ void Wait()
 		{
 			std::cin.get();
 		}
+		delete[] buff;
 	}
 }

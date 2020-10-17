@@ -5,9 +5,6 @@
 
 void Game(Settings gs)
 {
-	/*Player * player1 = AISettings();
-
-	player1->name = _strdup("Elgun");*/
 	Player* player1 = CreatePlayer();
 
 	player1->_board.NewBoard();

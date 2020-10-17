@@ -34,7 +34,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 				{
 					if (gs.sound)
 					{
-						SoundEffects(1);
+						SoundEffects(HIT_SOUND);
 						Sleep(1000);
 					}
 
@@ -59,7 +59,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 			{
 				if (gs.sound)
 				{
-					SoundEffects(1);
+					SoundEffects(HIT_SOUND);
 					Sleep(1000);
 				}
 				if (player2->_board.CheckBlocks())
@@ -75,7 +75,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 		PrintBoards(player2, player1);
 		if (gs.sound)
 		{
-			SoundEffects(0);
+			SoundEffects(MISS_SOUND);
 			Sleep(500);
 		}
 	}

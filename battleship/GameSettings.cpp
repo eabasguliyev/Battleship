@@ -12,23 +12,6 @@ void SetChanges(short status, bool &change)
 	}
 }
 
-short GameSettingsScreen(bool inputDevices)
-{
-
-	system("CLS");
-
-	int size = 4;
-	char** options = new char* [size];
-	options[0] = _strdup("Game Mode");
-	options[1] = _strdup("Sound");
-	options[2] = _strdup("Input Devices");
-	options[3] = _strdup("Back");
-
-	if (inputDevices)
-		return MenuInputWithMouse(options, size);
-	else
-		return MenuInputWithKeyboard(options, size);
-}
 
 void GameSettings(Settings & GS)
 {
@@ -52,10 +35,6 @@ void GameSettings(Settings & GS)
 		{
 			short status = InputDevicesSettings(GS.inputDevices);
 			SetChanges(status, GS.inputDevices);
-			/*if (status != 3)
-			{
-				SetConsoleCursor(GS.inputDevices);
-			}*/
 		}break;
 		case 4:
 		{

@@ -559,7 +559,7 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 				}
 				if (sound)
 				{
-					SoundEffects(1);
+					SoundEffects(HIT_SOUND);
 					Sleep(1000);
 				}
 				
@@ -603,7 +603,7 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 				status = Attack(human, computer, current_coordinate, directions);
 				if ((status == ONE_MORE_ATTACK || status == AIWIN ) && sound)
 				{
-					SoundEffects(1);
+					SoundEffects(HIT_SOUND);
 					Sleep(1000);
 				}
 

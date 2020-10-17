@@ -153,7 +153,6 @@
     <ClCompile Include="AI.cpp" />
     <ClCompile Include="ClearConsoleArea.cpp" />
     <ClCompile Include="ControlMenu.cpp" />
-    <ClCompile Include="GameOverScreen.cpp" />
     <ClCompile Include="AISettings.cpp" />
     <ClCompile Include="AttackToOpponent.cpp" />
     <ClCompile Include="CheckOverlap.cpp" />
@@ -162,29 +161,21 @@
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="GameSettings.cpp" />
     <ClCompile Include="GetCaretPosition.cpp" />
-    <ClCompile Include="GetCoordinates.cpp" />
-    <ClCompile Include="GameModeScreen.cpp" />
-    <ClCompile Include="GetDiff.cpp" />
-    <ClCompile Include="GetOrientation.cpp" />
-    <ClCompile Include="InputDevicesSettings.cpp" />
+    <ClCompile Include="InputCoordinates.cpp" />
+    <ClCompile Include="Screens.cpp" />
     <ClCompile Include="InputName.cpp" />
     <ClCompile Include="GetValidCoordinates.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="MainScreen.cpp" />
     <ClCompile Include="PlaceAIShips.cpp" />
     <ClCompile Include="PlaceTheShip.cpp" />
-    <ClCompile Include="SoundEffects.cpp" />
-    <ClCompile Include="PrintBoards.cpp" />
+    <ClCompile Include="Sound.cpp" />
+    <ClCompile Include="RefreshGameScreen.cpp" />
     <ClCompile Include="PrintMenu.cpp" />
-    <ClCompile Include="PrintScores.cpp" />
-    <ClCompile Include="PrintWinner.cpp" />
     <ClCompile Include="RandomCoordinate.cpp" />
     <ClCompile Include="ResetPlayersData.cpp" />
-    <ClCompile Include="SoundSettings.cpp" />
     <ClCompile Include="Start.cpp" />
     <ClCompile Include="StartScreen.cpp" />
-    <ClCompile Include="TypingEffect.cpp" />
     <ClCompile Include="Wait.cpp" />
   </ItemGroup>
   <ItemGroup>
