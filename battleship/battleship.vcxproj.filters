@@ -45,9 +45,6 @@
     <ClCompile Include="AISettings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlaceAIShips.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GetValidCoordinates.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

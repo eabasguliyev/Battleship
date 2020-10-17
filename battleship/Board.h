@@ -144,29 +144,29 @@ struct Board
 	{
 		if (is_computer)
 		{
-			PlaceAIShips(board, 5, CARRIER);
-			PlaceAIShips(board, 4, BATTLESHIP);
-			PlaceAIShips(board, 3, CRUISER);
-			PlaceAIShips(board, 3, SUBMARINE);
-			PlaceAIShips(board, 2, DESTROYER);
+			PlaceAIShip(board, 5, CARRIER);
+			PlaceAIShip(board, 4, BATTLESHIP);
+			PlaceAIShip(board, 3, CRUISER);
+			PlaceAIShip(board, 3, SUBMARINE);
+			PlaceAIShip(board, 2, DESTROYER);
 		}
 		else
 		{
 			system("CLS");
 			PrintBoard({ 42, 8 });
-			PlaceTheShip(board, 5, CARRIER);
+			PlacePlayerShip(board, 5, CARRIER);
 			system("CLS");
 			PrintBoard({ 42, 8 });
-			PlaceTheShip(board, 4, BATTLESHIP);
+			PlacePlayerShip(board, 4, BATTLESHIP);
 			system("CLS");
 			PrintBoard({ 42, 8 });
-			PlaceTheShip(board, 3, CRUISER);
+			PlacePlayerShip(board, 3, CRUISER);
 			system("CLS");
 			PrintBoard({ 42, 8 });
-			PlaceTheShip(board, 3, SUBMARINE);
+			PlacePlayerShip(board, 3, SUBMARINE);
 			system("CLS");
 			PrintBoard({ 42, 8 });
-			PlaceTheShip(board, 2, DESTROYER);
+			PlacePlayerShip(board, 2, DESTROYER);
 		}
 	}
 	

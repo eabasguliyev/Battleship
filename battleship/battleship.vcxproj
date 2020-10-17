@@ -167,7 +167,6 @@
     <ClCompile Include="GetValidCoordinates.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="PlaceAIShips.cpp" />
     <ClCompile Include="PlaceTheShip.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="RefreshGameScreen.cpp" />

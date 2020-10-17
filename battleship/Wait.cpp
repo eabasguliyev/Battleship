@@ -1,7 +1,5 @@
 #include <iostream>
 
-#include <iostream>
-
 void Wait()
 {
 	char* buff = new char[255];
