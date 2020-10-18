@@ -55,9 +55,9 @@ void CopyCoordinate(Coordinate& coo1, Coordinate& coo2)
 // 3 try again, state 3 opposite direct
 
 
-int GetStatusCode(Player* human, Player* computer, Coordinate& last_coo)
+int GetStatusCode(Player* human, Player* computer, Coordinate& last_coo, Directions directions)
 {
-	if (CheckCoordinates(human->_board.board, last_coo))
+	if (CheckCoordinates(human->_board.board, last_coo, true, true, directions.orientation, directions.direction))
 	{
 		CopyCoordinate(computer->_coordinate, last_coo);
 
@@ -117,7 +117,7 @@ int Attack(Player* human, Player* computer, Coordinate& last_coo, Directions dir
 			return 3;
 	}
 
-	return GetStatusCode(human, computer, last_coo);
+	return GetStatusCode(human, computer, last_coo, directions);
 }
 
 void ResetAIData(bool gameOver)
