@@ -56,7 +56,11 @@ int main()
 		else if (status == 3)
 		{
 			system("CLS");
-			std::cout << "About\n";
+			std::cout << "Battleship is a strategy type guessing game for two players. The game supports both multiplayer and singleplayer modes.\n";
+			std::cout << "The game consists of 10 out of 10 cells and 5 ships. Carrier is 5 digits, Battleship is 4 digits, \nCruiser and Submarine are 3 digits, and Destroyer is 2 digits.\n";
+			std::cout << "When ships are placed in cells, there must be at least 1 empty cell between each type of ship. \nEach cell is equal to one cell of the ship.\n";
+			std::cout << "After the game starts, the coordinates are taken with the keyboard or mouse. \nIf any ship has a cell in the given coordinate, you will be asked to guess again.\nOtherwise, your opponent will start guessing.\n";
+				
 			Wait();
 		}
 		else

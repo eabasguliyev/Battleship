@@ -15,11 +15,10 @@ short MenuInputWithMouse(char** options, int size)
 
 	SetConsoleMode(hConsoleIN, ENABLE_MOUSE_INPUT);
 	int selected = 0;
-
-	bool flag = true;
+	bool updateScreen = true;
 	while (1)
 	{
-		if (flag)
+		if (updateScreen)
 			PrintMenu(options, size, selected - 1);
 
 		ReadConsoleInput(hConsoleIN, &input_record, 1, &nRecordsRead);
@@ -33,7 +32,7 @@ short MenuInputWithMouse(char** options, int size)
 			{
 				if (x >= coordinate.X && x < coordinate.X + MENU_ITEM_SIZE)
 				{
-					flag = true;
+					updateScreen = true;
 					selected = y % coordinate.Y + 1;
 					if (input_record.Event.MouseEvent.dwButtonState == FROM_LEFT_1ST_BUTTON_PRESSED)
 					{
@@ -43,7 +42,7 @@ short MenuInputWithMouse(char** options, int size)
 			}
 			else
 			{
-				flag = false;
+				updateScreen = false;
 				selected = 0;
 			}
 		}

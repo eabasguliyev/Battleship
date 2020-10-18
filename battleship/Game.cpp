@@ -9,7 +9,7 @@ void Game(Settings gs)
 
 	player1->_board.NewBoard();
 
-	player1->_board.BoardConf(false);
+	player1->_board.BoardConf(player1->_board, gs.inputDevices);
 
 
 	Player* player2;
@@ -24,17 +24,26 @@ void Game(Settings gs)
 
 		player2->_board.NewBoard();
 
-		player2->_board.BoardConf(false);
+		player2->_board.BoardConf(player2->_board, gs.inputDevices);
 	}
 
 
 	while(1)
 	{
-		Wait();
+		if (gs.inputDevices)
+		{
+			Sleep(1000);
+		}
+		else
+		{
+			Wait();
+		}
+		
+
 		Start(player1, player2, gs);
 		if (GameOverScreen(gs.inputDevices))
 		{
-			ResetPlayersData(player1, player2, gs.gameMode);
+			ResetPlayersData(player1, player2, gs.gameMode, gs.inputDevices);
 			continue;
 		}
 		else

@@ -2,11 +2,19 @@
 #include "Player.h"
 
 
-void GetValidCoordinates(Board defender_board, Coordinate & attacker_move)
+void GetValidCoordinates(Board defender_board, Coordinate & attacker_move, bool inputDevice)
 {
 	while (true)
 	{
-		GetCoordinates(attacker_move);
+		if (inputDevice)
+		{
+			GetCoordinatesWithMouse(attacker_move);
+		}
+		else
+		{
+			GetCoordinates(attacker_move);
+		}
+		
 		if (CheckCoordinates(defender_board.board, attacker_move))
 		{
 			return;

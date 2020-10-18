@@ -37,6 +37,7 @@ enum SOUNDS
 
 short GameSettingsScreen(bool inputDevices);
 void Wait();
+void GetCoordinatesWithMouse(Coordinate& coordinate);
 bool CheckAndSet(int** board, int ship_blocks, int ship_id, char orientation, Coordinate coordinate);
 COORD GetConsoleCaretPosition(HANDLE hConsoleOutput);
 void ClearConsoleArea(COORD pos1, COORD pos2);
@@ -62,7 +63,9 @@ Player* CreatePlayer();
 void Game(Settings gs);
 void GetCoordinates(Coordinate & coordinate);
 void GetOrientation(char& orientation);
-void PlacePlayerShip(int** board, int ship_blocks, int ship_id);
+void GetValidCoordinates(Board defender_board, Coordinate& attacker_move, bool inputDevice);
+void PlacePlayerShip(Board board, int ship_blocks, int ship_id, bool inputDevices);
+void GetShipCoordinate(Board board, char& orient, Coordinate& coordinate, short ship_blocks, short ship_id);
 bool CheckOverlap(int** board, char orientation, Coordinate coordinate, int ship_blocks);
 bool Draw();
 bool AttackToOpponent(Player*& defender, Player*& attacker);
@@ -73,8 +76,7 @@ Player* AISettings();
 bool CheckCoordinates(int** board, Coordinate player_move, bool ai = false, bool sides = false,bool orientation = false, bool direction = false);
 void PrintWinner(Player* player);
 char* InputName();
-void GetValidCoordinates(Board defender_board, Coordinate& attacker_move);
-void ResetPlayersData(Player* player1, Player* player2, bool is_computer);
+void ResetPlayersData(Player* player1, Player* player2, bool is_computer, bool inputDevices);
 void DeletePlayersData(Player*& player1, Player*& player2);
 void PrintBoards(Player* defender, Player* attacker, bool gameMode = false);
 void PrintScores(Player* player1, Player* player2);

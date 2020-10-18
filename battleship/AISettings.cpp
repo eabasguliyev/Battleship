@@ -9,6 +9,6 @@ Player* AISettings()
 
 	computer->name = _strdup("Computer");
 	computer->_board.NewBoard();
-	computer->_board.BoardConf(true);
+	computer->_board.BoardConfAI();
 	return computer;
 }

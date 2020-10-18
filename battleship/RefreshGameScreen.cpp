@@ -16,7 +16,7 @@ void PrintBoards(Player* defender, Player* attacker, bool gameMode)
 	PrintScores(defender, attacker);
 	SetConsoleCursorPosition(hConsoleOUT, coordinate);
 
-	defender->_board.PrintOpponentBoard({ 22, 8 });
+	defender->_board.PrintOpponentBoard({ 21, 8 });
 	attacker->_board.PrintBoard({ 60, 8 });
 }
 
@@ -29,5 +29,4 @@ void PrintScores(Player* player1, Player* player2)
 void PrintWinner(Player* player)
 {
 	std::cout << "Winner is " << player->name << "!\n";
-	player->score++;
 }

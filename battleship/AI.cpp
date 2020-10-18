@@ -248,7 +248,6 @@ bool CheckMiniBlockOnBoard(int ** board, short min_hit, Coordinate coo, char dir
 		}
 	}
 
-	//std::cout << std::bitset<8>(direction_states) << std::endl;
 	return flag;
 }
 

@@ -140,34 +140,32 @@ struct Board
 		return false;
 	}
 
-	void BoardConf(bool is_computer)
+	void BoardConfAI()
 	{
-		if (is_computer)
-		{
-			PlaceAIShip(board, 5, CARRIER);
-			PlaceAIShip(board, 4, BATTLESHIP);
-			PlaceAIShip(board, 3, CRUISER);
-			PlaceAIShip(board, 3, SUBMARINE);
-			PlaceAIShip(board, 2, DESTROYER);
-		}
-		else
-		{
-			system("CLS");
-			PrintBoard({ 42, 8 });
-			PlacePlayerShip(board, 5, CARRIER);
-			system("CLS");
-			PrintBoard({ 42, 8 });
-			PlacePlayerShip(board, 4, BATTLESHIP);
-			system("CLS");
-			PrintBoard({ 42, 8 });
-			PlacePlayerShip(board, 3, CRUISER);
-			system("CLS");
-			PrintBoard({ 42, 8 });
-			PlacePlayerShip(board, 3, SUBMARINE);
-			system("CLS");
-			PrintBoard({ 42, 8 });
-			PlacePlayerShip(board, 2, DESTROYER);
-		}
+		PlaceAIShip(board, 5, CARRIER);
+		PlaceAIShip(board, 4, BATTLESHIP);
+		PlaceAIShip(board, 3, CRUISER);
+		PlaceAIShip(board, 3, SUBMARINE);
+		PlaceAIShip(board, 2, DESTROYER);
+	}
+	void BoardConf(Board board, bool inputDevices)
+	{
+		system("CLS");
+		PrintBoard({ 42, 8 });
+		PlacePlayerShip(board, 5, CARRIER, inputDevices);
+		system("CLS");
+		PrintBoard({ 42, 8 });
+		PlacePlayerShip(board, 4, BATTLESHIP, inputDevices);
+		system("CLS");
+		PrintBoard({ 42, 8 });
+		PlacePlayerShip(board, 3, CRUISER, inputDevices);
+		system("CLS");
+		PrintBoard({ 42, 8 });
+		PlacePlayerShip(board, 3, SUBMARINE, inputDevices);
+		system("CLS");
+		PrintBoard({ 42, 8 });
+		PlacePlayerShip(board, 2, DESTROYER, inputDevices);
+		PrintBoard({ 42, 8 });
 	}
 	
 	void ResetBlocks()

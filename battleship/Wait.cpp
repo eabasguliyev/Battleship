@@ -2,7 +2,7 @@
 
 void Wait()
 {
-	char* buff = new char[255];
+	char* buff = new char[255]{};
 
 	if (buff)
 	{
