@@ -21,6 +21,8 @@ void ConsoleScreenSettings()
 	HWND consoleWindow = GetConsoleWindow();
 	SetWindowLong(consoleWindow, GWL_STYLE, GetWindowLong(consoleWindow, GWL_STYLE) & ~WS_MAXIMIZEBOX & ~WS_SIZEBOX);
 
+	//MoveWindow(consoleWindow, 500, 58, 895, 518 , TRUE);
+
 	CONSOLE_CURSOR_INFO cursor_info = {};
 
 	cursor_info.bVisible = false;
@@ -30,6 +32,7 @@ void ConsoleScreenSettings()
 
 int main()
 {
+	
 	Settings gs;
 	gs.inputDevices = true;
 	ConsoleScreenSettings();

@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Declarations.h"
 #include "Settings.h"
-
+#include <bitset>
 static int MAX_HIT = 5;
 static int MIN_HIT = 2;
 static char direction_states = 0;
@@ -190,7 +190,7 @@ bool CheckState(int state, char direction_states)
 }
 
 
-bool CheckMiniBlockOnBoard(int ** board, short min_hit, Coordinate coo, char direction_states)
+bool CheckMiniBlockOnBoard(int ** board, short min_hit, Coordinate coo, char& direction_states)
 {
 	short hit = 1;
 	short i = 0;
@@ -226,7 +226,7 @@ bool CheckMiniBlockOnBoard(int ** board, short min_hit, Coordinate coo, char dir
 					break;
 			}
 
-			if (board[current_coo.x][current_coo.y] == 1 || board[current_coo.x][current_coo.y] == -1)
+			if (!CheckCoordinates(board, current_coo, true))
 			{
 				break;
 			}
@@ -505,7 +505,6 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 {
 	while (1)
 	{
-
 		if (STATE == FIRST_ATACK)
 		{
 			if (diff >= Normal)
@@ -535,6 +534,7 @@ bool  AI(Player* human, Player* computer, short diff, bool sound)
 				}
 
 				ClearStates();
+
 				if (!CheckMiniBlockOnBoard(human->_board.board, MIN_HIT, computer->_coordinate, direction_states))
 				{
 					ClearStates();

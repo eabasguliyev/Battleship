@@ -48,6 +48,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 
 					if (player1->_board.CheckBlocks())
 					{
+						PrintBoards(player1, player2);
 						player2->score++;
 						if (gs.inputDevices)
 						{
@@ -80,6 +81,7 @@ void Start(Player * player1, Player * player2, Settings gs)
 				}
 				if (player2->_board.CheckBlocks())
 				{
+					PrintBoards(player2, player1);
 					player1->score++;
 					if (gs.inputDevices)
 					{

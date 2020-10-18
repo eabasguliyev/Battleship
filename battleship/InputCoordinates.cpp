@@ -237,24 +237,3 @@ void GetShipCoordinate(Board board, char& orient, Coordinate& coordinate, short 
 	}
 	return;
 }
-
-//int main()
-//{
-//	COORD a = {};
-//
-//	int board_size = 10;
-//	int** board = nullptr;
-//
-//	NewBoard(board, board_size);
-//
-//	PrintBoard(board, board_size, GetStdHandle(STD_OUTPUT_HANDLE), { 21,8 });
-//
-//	char orientation = ' ';
-//	COORD coordinate;
-//	PlaceTheShip(board, board_size, orientation, coordinate);
-//
-//
-//	std::cout << "Orientation: " << orientation << std::endl;
-//	std::cout << "X: " << coordinate.x << std::endl;
-//	std::cout << "Y: " << coordinate.y << std::endl;
-//}

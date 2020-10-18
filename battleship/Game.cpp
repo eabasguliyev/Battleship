@@ -32,7 +32,7 @@ void Game(Settings gs)
 	{
 		if (gs.inputDevices)
 		{
-			Sleep(1000);
+			Sleep(2000);
 		}
 		else
 		{
