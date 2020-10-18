@@ -21,14 +21,13 @@ void Start(Player * player1, Player * player2, Settings gs)
 				if (status)
 				{
 					player2->score++;
-
+					PrintBoards(player2, player1, gs.gameMode);
 					if (gs.inputDevices)
 					{
 						MessageBox(GetConsoleWindow(), L"You lose!", L"LOSE!", MB_ICONWARNING);
 					}
 					else
 					{
-						PrintBoards(player2, player1, gs.gameMode);
 						PrintWinner(player2);
 						PrintScores(player1, player2);
 					}
