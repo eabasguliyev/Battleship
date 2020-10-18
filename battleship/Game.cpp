@@ -48,7 +48,8 @@ void Game(Settings gs)
 		}
 		else
 		{
-			DeletePlayersData(player1, player2);
+
+			DeletePlayersData(player1, player2, gs.gameMode);
 			return;
 		}
 	}

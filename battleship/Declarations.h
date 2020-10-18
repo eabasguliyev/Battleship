@@ -77,6 +77,6 @@ bool CheckCoordinates(int** board, Coordinate player_move, bool ai = false, bool
 void PrintWinner(Player* player);
 char* InputName();
 void ResetPlayersData(Player* player1, Player* player2, bool is_computer, bool inputDevices);
-void DeletePlayersData(Player*& player1, Player*& player2);
+void DeletePlayersData(Player*& player1, Player*& player2, bool is_computer);
 void PrintBoards(Player* defender, Player* attacker, bool gameMode = false);
 void PrintScores(Player* player1, Player* player2);
