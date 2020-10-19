@@ -1,7 +1,0 @@
-﻿  AI.cpp
-C:\Users\elgun\repos\battleship\battleship\battleship\AI.cpp(145,6): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\elgun\repos\battleship\battleship\battleship\AI.cpp(438,13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\elgun\repos\battleship\battleship\battleship\AI.cpp(439,13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\elgun\repos\battleship\battleship\battleship\AI.cpp(443,13): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\elgun\repos\battleship\battleship\battleship\AI.cpp(444,17): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  battleship.vcxproj -> C:\Users\elgun\repos\battleship\battleship\bin\x64\Debug\battleship.exe
