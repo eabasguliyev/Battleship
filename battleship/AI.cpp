@@ -321,6 +321,7 @@ short GetMinBlock(int** board)
 			return counter;
 		}
 	}
+	return counter;
 }
 
 short GetMaxBlock(int** board)
