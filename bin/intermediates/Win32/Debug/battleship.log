@@ -1,0 +1,140 @@
+﻿  AI.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  ClearConsoleArea.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\ClearConsoleArea.cpp(8,28): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\ClearConsoleArea.cpp(10,29): warning C4018: '<': signed/unsigned mismatch
+  ControlMenu.cpp
+  AISettings.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  AttackToOpponent.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  CheckOverlap.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  CreatePlayer.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  DeletePlayersData.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  Draw.cpp
+  GameSettings.cpp
+  GetCaretPosition.cpp
+  InputCoordinates.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  Screens.cpp
+  InputName.cpp
+  GetValidCoordinates.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\main.cpp(40,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Game.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  PlaceTheShip.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  Sound.cpp
+  RefreshGameScreen.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+C:\Users\elgun\repos\battleship\battleship\battleship\AI.cpp(324): warning C4715: 'GetMinBlock': not all control paths return a value
+  Compiling...
+  PrintMenu.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\PrintMenu.cpp(9,23): warning C4018: '<': signed/unsigned mismatch
+  RandomCoordinate.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  ResetPlayersData.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  Start.cpp
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(25,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(31,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(82,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(88,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(117,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(119,25): warning C4018: '<': signed/unsigned mismatch
+C:\Users\elgun\repos\battleship\battleship\battleship\Board.h(130,24): warning C4018: '<': signed/unsigned mismatch
+  StartScreen.cpp
+  Wait.cpp
+  Generating Code...
+  battleship.vcxproj -> C:\Users\elgun\repos\battleship\battleship\bin\Win32\Debug\battleship.exe

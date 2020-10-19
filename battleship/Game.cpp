@@ -11,6 +11,10 @@ void Game(Settings gs)
 
 	player1->_board.BoardConf(player1->_board, gs.inputDevices);
 
+	if (gs.inputDevices)
+	{
+		Sleep(2000);
+	}
 
 	Player* player2;
 	if (gs.gameMode)

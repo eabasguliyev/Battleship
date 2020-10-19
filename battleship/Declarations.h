@@ -4,10 +4,6 @@ struct Player;
 struct Coordinate;
 struct Board;
 struct Settings;
-enum GAMEMODE
-{
-	SINGLEPLAYER = 1, MULTIPLAYER
-};
 
 enum DIFFICULTY
 {
