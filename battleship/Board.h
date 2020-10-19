@@ -37,7 +37,7 @@ struct Board
 					SetConsoleTextAttribute(hConsoleOUT, YELLOW);
 					std::cout << " * ";
 				}
-					break;
+				break;
 				case SPACE:
 					std::cout << " . ";
 					break;
@@ -46,7 +46,7 @@ struct Board
 					SetConsoleTextAttribute(hConsoleOUT, RED);
 					std::cout << " X ";
 				}
-					break;
+				break;
 				case DESTROYER:
 					std::cout << " D ";
 					break;
@@ -71,7 +71,7 @@ struct Board
 			SetConsoleTextAttribute(hConsoleOUT, WHITE);
 		}
 	}
-	
+
 	void PrintOpponentBoard(COORD coordinate)
 	{
 		HANDLE hConsoleOUT = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -94,13 +94,13 @@ struct Board
 					SetConsoleTextAttribute(hConsoleOUT, YELLOW);
 					std::cout << " * ";
 				}
-					break;
+				break;
 				case HIT:
 				{
 					SetConsoleTextAttribute(hConsoleOUT, GREEN);
 					std::cout << " X ";
 				}
-					break;
+				break;
 				default:
 					std::cout << " . ";
 					break;
@@ -111,7 +111,7 @@ struct Board
 			SetConsoleTextAttribute(hConsoleOUT, WHITE);
 		}
 	}
-	
+
 	void ResetBoard()
 	{
 		for (size_t i = 0; i < board_size; i++)
@@ -133,6 +133,14 @@ struct Board
 		}
 	}
 
+	void DeleteBoard()
+	{
+		for (size_t i = 0; i < board_size; i++)
+		{
+			delete[] board[i];
+		}
+		delete[]board;
+	}
 	bool CheckBlocks()
 	{
 		if (ship_blocks == 0)
